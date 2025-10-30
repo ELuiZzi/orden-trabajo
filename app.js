@@ -35,8 +35,8 @@ form.addEventListener("submit", async (e) => {
   // === CONFIGURACIÓN DE POSICIONES (EDITABLE) ===
   const pos = {
     folio: { x: 465, y: height - 95 },
-    dispositivo: { x: 80, y: height - 195 },
-    marca: { x: 180, y: height - 195 },
+    dispositivo: { x: 75, y: height - 195 },
+    marca: { x: 170, y: height - 195 },
     modelo: { x: 280, y: height - 195 },
     contrasena: { x: 390, y: height - 195 },
     enciende: { x: 510, y: height - 195 },
@@ -90,10 +90,10 @@ form.addEventListener("submit", async (e) => {
   page.drawText(modelo, { x: pos.modelo.x, y: pos.modelo.y - 10, size: 10, font });
 
   page.drawText("CONTRASEÑA:", { x: 360, y: pos.contrasena.y, size: 10, font: fontBold });
-  page.drawText(contrasena, { x: pos.contrasena.x, y: pos.contrasena.y, size: 10, font });
+  page.drawText(contrasena, { x: pos.contrasena.x, y: pos.contrasena.y - 10, size: 10, font });
 
   page.drawText("ENCIENDE:", { x: 480, y: pos.enciende.y, size: 10, font: fontBold });
-  page.drawText(enciende, { x: pos.enciende.x, y: pos.enciende.y, size: 10, font });
+  page.drawText(enciende, { x: pos.enciende.x, y: pos.enciende.y - 10, size: 10, font });
 
   y -= 50;
   page.drawText("SIGNOS:", { x: 60, y, size: 10, font: fontBold });
@@ -151,4 +151,5 @@ form.addEventListener("submit", async (e) => {
     "block text-center bg-green-600 text-white py-2 rounded mt-2 hover:bg-green-700";
   visor.insertAdjacentElement("afterend", enlace);
 });
+
 
