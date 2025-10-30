@@ -96,7 +96,7 @@ form.addEventListener("submit", async (e) => {
   // Costo diagnóstico
   page.drawRectangle({ x: 370, y: 60, width: 160, height: 40, borderColor: rgb(0, 0, 0), borderWidth: 1 });
   page.drawText("COSTO DIAGNÓSTICO: $", { x: 375, y: 80, size: 10, font: fontBold });
-  page.drawText(costo, { x: 520, y: 80, size: 12, font: fontBold, color: rgb(0, 0, 1) });
+  page.drawText(costo, { x: 500, y: 80, size: 15, font: fontBold, color: rgb(0, 0, 1) });
 
   // WhatsApp
   page.drawImage(whatsappImg, { x: 60, y: 70, width: 15, height: 15 });
@@ -130,6 +130,7 @@ form.addEventListener("submit", async (e) => {
     "block text-center bg-green-600 text-white py-2 rounded mt-2 hover:bg-green-700";
   visor.insertAdjacentElement("afterend", enlace);
 });
+
 
 
 
