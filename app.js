@@ -65,7 +65,7 @@ form.addEventListener("submit", async (e) => {
   // === FOLIO ===
   page.drawRectangle({ x: pos.folio.x - 15, y: pos.folio.y - 15, width: 110, height: 30, borderColor: rgb(0, 0, 0), borderWidth: 1 });
   page.drawText("FOLIO", { x: pos.folio.x, y: pos.folio.y + 10, size: 10, font: fontBold });
-  page.drawText(folio, { x: pos.folio.x + 40, y: pos.folio.y - 2, size: 14, font: fontBold, color: rgb(0, 0.6, 0) });
+  page.drawText(folio, { x: pos.folio.x + 40, y: pos.folio.y - 2, size: 14, font: fontBold, color: rgb(1, 0, 0) });
 
   // === CAMPOS ===
   let y = height - 130;
@@ -151,5 +151,6 @@ form.addEventListener("submit", async (e) => {
     "block text-center bg-green-600 text-white py-2 rounded mt-2 hover:bg-green-700";
   visor.insertAdjacentElement("afterend", enlace);
 });
+
 
 
