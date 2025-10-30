@@ -50,12 +50,12 @@ form.addEventListener("submit", async (e) => {
 
   // Encabezado
   page.drawText("ORDEN DE TRABAJO COMPUTO", { x: 180, y: height - 60, size: 14, font: fontBold });
-  page.drawText("RECEPCIÓN DE EQUIPO Y DIAGNÓSTICO", { x: 165, y: height - 80, size: 12, font: fontBold });
+  page.drawText("RECEPCIÓN DE EQUIPO Y DIAGNÓSTICO", { x: 180, y: height - 80, size: 12, font: fontBold });
 
   // Folio
   page.drawRectangle({ x: 450, y: height - 105, width: 100, height: 30, borderColor: rgb(0, 0, 0), borderWidth: 1 });
   page.drawText("FOLIO", { x: 455, y: height - 90, size: 10, font: fontBold });
-  page.drawText(folio, { x: 495, y: height - 110, size: 15, font: fontBold, color: rgb(1, 0, 0) });
+  page.drawText(folio, { x: 495, y: height - 110, size: 15, font: fontBold, color: rgb(0, 1, 0) });
 
   // Campos
   let y = height - 150;
@@ -130,4 +130,5 @@ form.addEventListener("submit", async (e) => {
     "block text-center bg-green-600 text-white py-2 rounded mt-2 hover:bg-green-700";
   visor.insertAdjacentElement("afterend", enlace);
 });
+
 
