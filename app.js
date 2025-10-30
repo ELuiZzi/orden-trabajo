@@ -35,11 +35,11 @@ form.addEventListener("submit", async (e) => {
   // === CONFIGURACIÓN DE POSICIONES (EDITABLE) ===
   const pos = {
     folio: { x: 465, y: height - 95 },
-    dispositivo: { x: 75, y: height - 195 },
-    marca: { x: 170, y: height - 195 },
-    modelo: { x: 280, y: height - 195 },
-    contrasena: { x: 390, y: height - 195 },
-    enciende: { x: 510, y: height - 195 },
+    dispositivo: { x: 60, y: height - 195 },
+    marca: { x: 160, y: height - 195 },
+    modelo: { x: 260, y: height - 195 },
+    contrasena: { x: 360, y: height - 195 },
+    enciende: { x: 480, y: height - 195 },
     total: { x: 465, y: 60 },
   };
 
@@ -60,10 +60,10 @@ form.addEventListener("submit", async (e) => {
   // === ENCABEZADO ===
   page.drawImage(logoImg, { x: 40, y: height - 110, width: 90, height: 90 });
   page.drawText("ORDEN DE TRABAJO COMPUTO", { x: 190, y: height - 50, size: 14, font: fontBold });
-  page.drawText("RECEPCIÓN DE EQUIPO Y DIAGNÓSTICO", { x: 160, y: height - 70, size: 12, font: fontBold });
+  page.drawText("RECEPCIÓN DE EQUIPO Y DIAGNÓSTICO", { x: 175, y: height - 70, size: 12, font: fontBold });
 
   // === FOLIO ===
-  page.drawRectangle({ x: pos.folio.x - 15, y: pos.folio.y - 15, width: 110, height: 30, borderColor: rgb(0, 0, 0), borderWidth: 1 });
+  page.drawRectangle({ x: pos.folio.x - 15, y: pos.folio.y - 10, width: 110, height: 30, borderColor: rgb(0, 0, 0), borderWidth: 1 });
   page.drawText("FOLIO", { x: pos.folio.x, y: pos.folio.y + 10, size: 10, font: fontBold });
   page.drawText(folio, { x: pos.folio.x + 40, y: pos.folio.y - 2, size: 14, font: fontBold, color: rgb(1, 0, 0) });
 
@@ -81,19 +81,19 @@ form.addEventListener("submit", async (e) => {
   y -= 20;
 
   page.drawText("DISPOSITIVO:", { x: 60, y: pos.dispositivo.y, size: 10, font: fontBold });
-  page.drawText(dispositivo, { x: pos.dispositivo.x, y: pos.dispositivo.y - 10, size: 10, font });
+  page.drawText(dispositivo, { x: pos.dispositivo.x, y: pos.dispositivo.y - 11, size: 10, font });
 
   page.drawText("MARCA:", { x: 160, y: pos.marca.y, size: 10, font: fontBold });
-  page.drawText(marca, { x: pos.marca.x, y: pos.marca.y - 10, size: 10, font });
+  page.drawText(marca, { x: pos.marca.x, y: pos.marca.y - 11, size: 10, font });
 
   page.drawText("MODELO:", { x: 260, y: pos.modelo.y, size: 10, font: fontBold });
-  page.drawText(modelo, { x: pos.modelo.x, y: pos.modelo.y - 10, size: 10, font });
+  page.drawText(modelo, { x: pos.modelo.x, y: pos.modelo.y - 11, size: 10, font });
 
   page.drawText("CONTRASEÑA:", { x: 360, y: pos.contrasena.y, size: 10, font: fontBold });
-  page.drawText(contrasena, { x: pos.contrasena.x, y: pos.contrasena.y - 10, size: 10, font });
+  page.drawText(contrasena, { x: pos.contrasena.x, y: pos.contrasena.y - 11, size: 10, font });
 
   page.drawText("ENCIENDE:", { x: 480, y: pos.enciende.y, size: 10, font: fontBold });
-  page.drawText(enciende, { x: pos.enciende.x, y: pos.enciende.y - 10, size: 10, font });
+  page.drawText(enciende, { x: pos.enciende.x, y: pos.enciende.y - 11, size: 10, font });
 
   y -= 50;
   page.drawText("SIGNOS:", { x: 60, y, size: 10, font: fontBold });
@@ -151,6 +151,7 @@ form.addEventListener("submit", async (e) => {
     "block text-center bg-green-600 text-white py-2 rounded mt-2 hover:bg-green-700";
   visor.insertAdjacentElement("afterend", enlace);
 });
+
 
 
 
