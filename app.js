@@ -40,7 +40,7 @@ form.addEventListener("submit", async (e) => {
     modelo: { x: 260, y: height - 195 },
     contrasena: { x: 360, y: height - 195 },
     enciende: { x: 480, y: height - 195 },
-    total: { x: 465, y: 60 },
+    total: { x: 390, y: 60 },
   };
 
   // === DATOS DEL FORMULARIO ===
@@ -116,8 +116,8 @@ form.addEventListener("submit", async (e) => {
 
   // === COSTO ===
   page.drawRectangle({ x: 380, y: 50, width: 160, height: 40, borderColor: rgb(0, 0, 0), borderWidth: 1 });
-  page.drawText("COSTO DIAGNÓSTICO: $", { x: 385, y: 70, size: 10, font: fontBold });
-  page.drawText(costo, { x: pos.total.x, y: 70, size: 12, font: fontBold, color: rgb(0, 0, 1) });
+  page.drawText("COSTO DIAGNÓSTICO: $", { x: 385, y: 75, size: 10, font: fontBold });
+  page.drawText(costo, { x: pos.total.x, y: 60, size: 12, font: fontBold, color: rgb(1, 0, 0) });
 
   // === WHATSAPP ===
   page.drawImage(whatsappImg, { x: 60, y: 60, width: 15, height: 15 });
@@ -151,6 +151,7 @@ form.addEventListener("submit", async (e) => {
     "block text-center bg-green-600 text-white py-2 rounded mt-2 hover:bg-green-700";
   visor.insertAdjacentElement("afterend", enlace);
 });
+
 
 
 
