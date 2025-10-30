@@ -32,14 +32,10 @@ form.addEventListener("submit", async (e) => {
   const whatsappBytes = await fetch("img/whatsapp.png").then(r => r.arrayBuffer());
   const whatsappImg = await pdfDoc.embedPng(whatsappBytes);
 
-  // === CONFIGURACIÓN DE POSICIONES (EDITABLE) ===
+  // === CONFIGURACIÓN DE POSICIONES EDITABLES ===
   const pos = {
-    folio: { x: 465, y: height - 105 },
-    dispositivo: { x: 80, y: height - 195 },
-    marca: { x: 180, y: height - 195 },
-    modelo: { x: 280, y: height - 195 },
-    contrasena: { x: 390, y: height - 195 },
-    enciende: { x: 510, y: height - 195 },
+    folio: { x: 465, y: height - 95 },
+    filaDatosY: height - 190, // línea donde irá la fila de Dispositivo-Marca-Modelo-Contraseña-Enciende
     total: { x: 465, y: 60 },
   };
 
@@ -67,7 +63,7 @@ form.addEventListener("submit", async (e) => {
   page.drawText("FOLIO", { x: pos.folio.x, y: pos.folio.y + 10, size: 10, font: fontBold });
   page.drawText(folio, { x: pos.folio.x + 40, y: pos.folio.y - 2, size: 14, font: fontBold, color: rgb(0, 0.6, 0) });
 
-  // === CAMPOS ===
+  // === CAMPOS SUPERIORES ===
   let y = height - 130;
   const drawLabel = (label, value, x, offset = 60) => {
     page.drawText(label, { x, y, size: 10, font: fontBold });
@@ -78,24 +74,28 @@ form.addEventListener("submit", async (e) => {
   drawLabel("NOMBRE:", nombre, 200, 70);
   y -= 20;
   drawLabel("TEL.:", telefono, 60);
-  y -= 20;
+  y -= 30;
 
-  page.drawText("DISPOSITIVO:", { x: 60, y: pos.dispositivo.y, size: 10, font: fontBold });
-  page.drawText(dispositivo, { x: pos.dispositivo.x, y - 10: pos.dispositivo.y, size: 10, font });
+  // === FILA INFERIOR DE CAMPOS (Debajo de TEL) ===
+  const fy = pos.filaDatosY;
+  page.drawText("DISPOSITIVO:", { x: 60, y: fy, size: 10, font: fontBold });
+  page.drawText(dispositivo, { x: 125, y: fy, size: 10, font });
 
-  page.drawText("MARCA:", { x: 160, y: pos.marca.y, size: 10, font: fontBold });
-  page.drawText(marca, { x: pos.marca.x, y: pos.marca.y - 15, size: 10, font });
+  page.drawText("MARCA:", { x: 200, y: fy, size: 10, font: fontBold });
+  page.drawText(marca, { x: 240, y: fy, size: 10, font });
 
-  page.drawText("MODELO:", { x: 260, y: pos.modelo.y, size: 10, font: fontBold });
-  page.drawText(modelo, { x: pos.modelo.x, y: pos.modelo.y - 20, size: 10, font });
+  page.drawText("MODELO:", { x: 300, y: fy, size: 10, font: fontBold });
+  page.drawText(modelo, { x: 350, y: fy, size: 10, font });
 
-  page.drawText("CONTRASEÑA:", { x: 360, y: pos.contrasena.y, size: 10, font: fontBold });
-  page.drawText(contrasena, { x: pos.contrasena.x, y: pos.contrasena.y, size: 10, font });
+  page.drawText("CONTRASEÑA:", { x: 420, y: fy, size: 10, font: fontBold });
+  page.drawText(contrasena, { x: 490, y: fy, size: 10, font });
 
-  page.drawText("ENCIENDE:", { x: 480, y: pos.enciende.y, size: 10, font: fontBold });
-  page.drawText(enciende, { x: pos.enciende.x, y: pos.enciende.y, size: 10, font });
+  const fy2 = fy - 20;
+  page.drawText("ENCIENDE:", { x: 60, y: fy2, size: 10, font: fontBold });
+  page.drawText(enciende, { x: 120, y: fy2, size: 10, font });
 
-  y -= 50;
+  // === SECCIONES DE TEXTO ===
+  y = fy2 - 40;
   page.drawText("SIGNOS:", { x: 60, y, size: 10, font: fontBold });
   y -= 15;
   page.drawText(signos, { x: 60, y, size: 10, font, maxWidth: 480, lineHeight: 12 });
@@ -151,7 +151,3 @@ form.addEventListener("submit", async (e) => {
     "block text-center bg-green-600 text-white py-2 rounded mt-2 hover:bg-green-700";
   visor.insertAdjacentElement("afterend", enlace);
 });
-
-
-
-
