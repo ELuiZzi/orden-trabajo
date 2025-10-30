@@ -84,10 +84,10 @@ form.addEventListener("submit", async (e) => {
   page.drawText(dispositivo, { x: pos.dispositivo.x, y: pos.dispositivo.y, size: 10, font });
 
   page.drawText("MARCA:", { x: 160, y: pos.marca.y, size: 10, font: fontBold });
-  page.drawText(marca, { x: pos.marca.x, y: pos.marca.y, size: 10, font });
+  page.drawText(marca, { x: pos.marca.x, y: pos.marca.y+50, size: 10, font });
 
   page.drawText("MODELO:", { x: 260, y: pos.modelo.y, size: 10, font: fontBold });
-  page.drawText(modelo, { x: pos.modelo.x, y: pos.modelo.y - 25, size: 10, font });
+  page.drawText(modelo, { x: pos.modelo.x, y: pos.modelo.y - 50, size: 10, font });
 
   page.drawText("CONTRASEÑA:", { x: 360, y: pos.contrasena.y, size: 10, font: fontBold });
   page.drawText(contrasena, { x: pos.contrasena.x, y: pos.contrasena.y, size: 10, font });
@@ -151,4 +151,5 @@ form.addEventListener("submit", async (e) => {
     "block text-center bg-green-600 text-white py-2 rounded mt-2 hover:bg-green-700";
   visor.insertAdjacentElement("afterend", enlace);
 });
+
 
